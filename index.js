@@ -29,6 +29,10 @@ client.connect(err => {
 
   })
 
+  app.get('/', (req, res) => {
+    res.send("hello db ! now it's working")
+  })
+
   app.get('/products', (req, res) => {
     productsCollection.find({})
       .toArray((err, documents) => {
